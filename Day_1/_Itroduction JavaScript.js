@@ -1,0 +1,2 @@
+// what is javascript?
+// JavaScript is a dynamic, interpreted programming language primarily used for adding interactivity and complexity to web pages. It allows developers to manipulate HTML and CSS, create dynamic content, and handle various user interactions, making websites more engaging and user-friendly. 
