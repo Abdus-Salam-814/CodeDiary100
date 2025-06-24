@@ -51,3 +51,26 @@ console.log(count)
 let count2 = 5;
 count2--;
 console.log(count2)
+let x = 10;
+x += 5;
+x *= 2;
+x--;
+console.log(x);
+
+let mathFloor = Math.floor(4.9);
+console.log(mathFloor);
+console.log(Math.ceil(4.1));
+console.log(Math.round(4.4))
+
+let stringNumber = '66';
+
+console.log(typeof stringNumber, typeof parseInt(stringNumber))
+let roundMath = Math.ceil(Math.random() * 6);
+console.log(roundMath, 'hi');
+
+
+
+// console.log(10 | 0)
+
+
+
