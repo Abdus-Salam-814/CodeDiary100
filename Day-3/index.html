@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Undo/Redo Demo</title>
+</head>
+<body>
+  <h2>📝 Simple Text Editor with Undo/Redo</h2>
+  <textarea id="editor" rows="5" cols="50" placeholder="Type something..."></textarea><br><br>
+  <button onclick="undo()">Undo</button>
+  <button onclick="redo()">Redo</button>
+
+  <script>
+    const editor = document.getElementById('editor');
+    let undoStack = [];
+    let redoStack = [];
+
+    // যখন টাইপ হয়, তখন undoStack-এ বর্তমান লেখা সংরক্ষণ করি
+    editor.addEventListener('input', () => {
+      undoStack.push(editor.value);
+      redoStack = []; // নতুন ইনপুট দিলে redoStack খালি করে দিই
+    });
+
+    function undo() {
+      if (undoStack.length > 1) {
+        redoStack.push(undoStack.pop()); // বর্তমান লেখা রাখি redoStack-এ
+        editor.value = undoStack[undoStack.length - 1]; // আগের লেখা দেখাই
+      }
+    }
+
+    function redo() {
+      if (redoStack.length > 0) {
+        const redoText = redoStack.pop();
+        editor.value = redoText;
+        undoStack.push(redoText);
+      }
+    }
+  </script>
+</body>
+</html>
