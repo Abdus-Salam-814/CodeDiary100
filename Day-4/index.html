@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Add and remove
+    </title>
+    <style>
+        .h-6{
+            height: 100px;
+        }
+        .text-red{
+            color: red;
+        }
+        .bg-sain{
+            background-color: rgb(218, 213, 211);
+        }
+        .p-8{
+            padding: 8px;
+        }
+        .w-1200{
+            max-width: 1200px;
+        }
+        .mx-auto{
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="w-1200 mx-auto ">
+    
+
+    <input id="input-field" type="text" placeholder="Write this box">
+
+    <button id="check-btn">Check And Add </button>
+
+    <h3 class="h-6 text-red bg-sain p-8" id="alert-masage"></h3>
+    <hr>
+
+    <ul id="nameAddField">
+
+    </ul>
+
+    <script>
+        const myData = []
+
+        // Add get id 
+        const inputField = document.getElementById('input-field') 
+        const alartField = document.getElementById('alert-masage')
+        const nameAddField = document.getElementById('nameAddField')
+
+
+
+    document.getElementById('check-btn').addEventListener('click', function(){
+        const checkInputText  = inputField.value;
+        console.log(myData.length)
+
+       
+        
+
+
+        if(!myData.includes(checkInputText)  ){
+            alartField.innerText = '';
+            if(checkInputText === ""){
+                return;
+            }
+            myData.push(checkInputText);
+
+            const li = document.createElement('li');
+        li.innerText = `${checkInputText}`
+        nameAddField.appendChild(li)
+        }else{
+            alartField.innerText = 'আপনার দেওয়া ইমপোর্টটি আগে থেকে রয়েছে অনুগ্রহ করে ভিন্ন একটি ভ্যালু দিন'
+        }
+        console.log(myData)
+    })
+    </script>
+    
+</body>
+</html>
